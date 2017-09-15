@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-
+gem 'haml', '~> 5.0', '>= 5.0.3'
+gem 'simple_form', '~> 3.5'
+gem 'paperclip', '~> 5.1'
+gem 'devise', '~> 3.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
