@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'fuckyou#index'
-  
+  resources :posts
+
+  root 'posts#index'
+
   constraints(host: /^www\.(?!cute\.)/i) do
 
     match '(*any)', via: :all, to: redirect { |params, request|
