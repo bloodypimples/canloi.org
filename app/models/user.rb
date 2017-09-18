@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  has_many :posts
   # only returns user's name if that exists, otherwise returns user's email
   def get_name
     if self.name.empty?
