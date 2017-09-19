@@ -8,7 +8,7 @@
       Đăng bởi:
       <%= link_to post.user.get_name, post.user %>
       vào
-      <%= link_to post.get_category, posts_path(category: post.category_id) %>
+      <%= link_to post.category_id, posts_path(category: post.category_id) %>
     </p>
     <p>
       <%= time_ago_in_words(post.created_at) %> trước
