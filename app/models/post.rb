@@ -6,5 +6,7 @@ class Post < ActiveRecord::Base
   validates_attachment_file_name :picture, matches: [/png\z/, /jpe?g\z/]
   validates :title, presence: true
   validates :picture, attachment_presence: true
+  validates :category_id, presence: true
   belongs_to :user
+  belongs_to :category
 end

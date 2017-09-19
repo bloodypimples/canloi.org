@@ -7,6 +7,7 @@ vi:
       post:
         picture: "Hình ảnh"
         title: "Tiêu đề"
+        category_id: "Danh mục"
     errors:
       messages:
         record_invalid: 'Có các lỗi sau: %{errors}'
@@ -113,8 +114,8 @@ vi:
     format: "%{attribute} %{message}"
     messages:
       accepted: phải được đồng ý
-      blank: không thể để trắng
-      present: cần phải để trắng
+      blank: không thể bỏ trống
+      present: cần phải bỏ trống
       confirmation: không khớp với xác nhận
       empty: không thể rỗng
       equal_to: phải bằng %{count}

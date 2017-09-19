@@ -16,6 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label 'Danh mục' %><br>
+    <%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] }, prompt: "Chọn danh mục" %>
+  </div>
+  <div class="field">
     <%= f.label 'Hình ảnh' %>
     <%= f.file_field :picture %>
   </div>

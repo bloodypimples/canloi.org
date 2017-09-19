@@ -7,6 +7,8 @@
     <p>
       Đăng bởi:
       <%= link_to post.user.get_name, post.user %>
+      vào mục
+      <%= link_to post.category_id, post.user %>
     </p>
     <p>
       <%= time_ago_in_words(post.created_at) %> trước

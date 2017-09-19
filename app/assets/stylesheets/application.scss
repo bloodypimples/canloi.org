@@ -117,7 +117,7 @@ input[type=text], input[type=file], input[type=email], input[type=password]{
 input[type=submit]{
   margin-top: 10px;
   border: 0px;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: $purple;
   color: pink;
   cursor: pointer;
@@ -159,4 +159,17 @@ form{
 
 .field_with_errors{
   background-color: transparent;
+}
+
+.categories{
+  text-align: center;
+  a{
+    color: $purple;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    &:hover{
+      background-color: pink;
+    }
+  }
 }

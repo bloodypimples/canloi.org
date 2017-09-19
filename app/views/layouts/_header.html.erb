@@ -2,6 +2,11 @@
   <div class="logo">
     <p><%= link_to "Cạnlời.org", root_path %></p>
   </div>
+  <div class="categories">
+    <% Category.all.each do |category| %>
+      <span><%= link_to category.name, posts_path(category: category.id) %></span>
+    <% end %>
+  </div>
   <div class="links">
   <% if user_signed_in? %>
     <%= link_to 'Đăng bài', new_post_path %>
