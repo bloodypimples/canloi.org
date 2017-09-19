@@ -1,6 +1,12 @@
 ---
 vi:
   activerecord:
+    models:
+      post: Bài
+    attributes:
+      post:
+        picture: "Hình ảnh"
+        title: "Tiêu đề"
     errors:
       messages:
         record_invalid: 'Có các lỗi sau: %{errors}'
