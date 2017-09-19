@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :downvote, :upvote]
   before_action :authenticate_user!, except: [:show, :index]
   before_action :correct_user, only: [:destroy, :edit]
 
@@ -66,6 +66,16 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Xóa bài thành công.' }
       format.json { head :no_content }
     end
+  end
+
+  def downvote
+    @post.downvote_by current_user
+    redirect_to :back
+  end
+
+  def upvote
+    @post.upvote_by current_user
+    redirect_to :back
   end
 
   private

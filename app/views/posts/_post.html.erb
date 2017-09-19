@@ -19,5 +19,9 @@
         <span><%= link_to 'Xóa', post, method: :delete, data: { confirm: 'Chắc chưa?' } %></span>
       <% end %>
     </div>
+    <div class="likes">
+      <span><%= link_to post.get_upvotes.size.to_s + "👍", like_post_path(post), method: :put %></span>
+      <span><%= link_to post.get_downvotes.size.to_s + "🖕", dislike_post_path(post), method: :put %></span>
+    </div>
   </div>
 </div>
