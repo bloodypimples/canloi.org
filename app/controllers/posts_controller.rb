@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :correct_user, only: [:destroy, :edit]
 
   # GET /posts
   # GET /posts.json
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: 'Đăng bài thành công.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Cập nhật thành công.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_url, notice: 'Xóa bài thành công.' }
       format.json { head :no_content }
     end
   end
@@ -71,5 +72,10 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :picture)
+    end
+
+    def correct_user
+      @post = current_user.posts.find_by(id: params[:id])
+      redirect_to root_url if @post.nil?
     end
 end

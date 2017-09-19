@@ -1,0 +1,15 @@
+<div class="head">
+  <div class="logo">
+    <p><%= link_to "Cạnlời.org", root_path %></p>
+  </div>
+  <div class="links">
+  <% if user_signed_in? %>
+    <%= link_to 'Đăng bài', new_post_path %>
+    <%= link_to current_user.get_name, current_user %>
+    <%= link_to "Thoát", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Đăng nhập", new_user_session_path %>
+    <%= link_to "Đăng ký", new_user_registration_path %>
+  <% end %>
+  </div>
+</div>

@@ -1,8 +1,21 @@
-<tr>
-  <td><%= post.title %></td>
-  <td><%= image_tag post.picture.url %></td>
-  <td><%= link_to 'Show', post %></td>
-  <td><%= link_to 'Edit', edit_post_path(post) %></td>
-  <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <td>posted by: <%= link_to post.user.get_name, post.user %></td>
-</tr>
+<div class="post">
+  <div class="picture">
+    <%= link_to image_tag(post.picture.url), post %>
+  </div>
+  <div class="text">
+    <h1><%= link_to post.title, post %></h1>
+    <p>
+      Đăng bởi:
+      <%= link_to post.user.get_name, post.user %>
+    </p>
+    <p>
+      <%= time_ago_in_words(post.created_at) %> trước
+    </p>
+    <div class="admin-links">
+      <% if user_signed_in? && current_user == post.user %>
+        <span><%= link_to 'Sửa', edit_post_path(post) %></span>
+        <span><%= link_to 'Xóa', post, method: :delete, data: { confirm: 'Chắc chưa?' } %></span>
+      <% end %>
+    </div>
+  </div>
+</div>
