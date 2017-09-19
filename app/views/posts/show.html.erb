@@ -7,6 +7,8 @@
       |
       <span><%= link_to 'Sửa', edit_post_path(@post) %></span>
       <span><%= link_to 'Xóa', @post, method: :delete, data: { confirm: 'Chắc chưa?' } %></span>
+      <span><%= link_to @post.get_upvotes.size.to_s + "👍", like_post_path(@post), method: :put %></span>
+      <span><%= link_to @post.get_downvotes.size.to_s + "🖕", dislike_post_path(@post), method: :put %></span>
     <% end %>
   </p>
   <div class="picture">
