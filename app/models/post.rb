@@ -9,4 +9,8 @@ class Post < ActiveRecord::Base
   validates :category_id, presence: true
   belongs_to :user
   belongs_to :category
+
+  def get_category
+    Category.find_by(id: self.category_id).name
+  end
 end
