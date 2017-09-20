@@ -7,10 +7,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:category].blank?
-      @posts = Post.all.order("created_at desc")
+      @posts = Post.paginate(:page => params[:page], :per_page => 10).order("created_at desc")
     else
       @category_id = params[:category]
-      @posts = Post.where(category_id: @category_id).order("created_at desc")
+      @posts = Post.where(category_id: @category_id).paginate(:page => params[:page], :per_page => 10).order("created_at desc")
     end
   end
 

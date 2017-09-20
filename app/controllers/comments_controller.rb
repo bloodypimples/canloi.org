@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @post, notice: 'Bình luận thành công.' }
+        format.html { redirect_to post_path(@post) + "#comment-title", notice: 'Bình luận thành công.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
