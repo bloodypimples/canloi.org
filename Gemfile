@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk', '~> 2.3'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'haml', '~> 5.0', '>= 5.0.3'
 gem 'simple_form', '~> 3.5'
