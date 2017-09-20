@@ -157,6 +157,10 @@ form{
   }
 }
 
+.avatar img{
+  border-radius: 50%;
+}
+
 .field_with_errors{
   background-color: transparent;
 }
@@ -172,4 +176,20 @@ form{
       background-color: pink;
     }
   }
+}
+
+.comment{
+  display: flex;
+  margin-top: 30px;
+  .text{
+    margin-left: 10px;
+    h3{
+      margin-top: 0px;
+    }
+  }
+}
+
+textarea{
+  width: 100%;
+  height: 80px;
 }

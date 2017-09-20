@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   # only returns user's name if that exists, otherwise returns user's email
   def get_name
     if self.name.nil? || self.name.empty?

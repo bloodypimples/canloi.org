@@ -22,6 +22,7 @@
     <div class="likes">
       <span><%= link_to post.get_upvotes.size.to_s + "👍", like_post_path(post), method: :put %></span>
       <span><%= link_to post.get_downvotes.size.to_s + "🖕", dislike_post_path(post), method: :put %></span>
+      <span><%= link_to post.comments.count.to_s + "🗨", post_path(post) + "#comment-title" %></span>
     </div>
   </div>
 </div>

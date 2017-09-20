@@ -9,6 +9,7 @@ class Post < ActiveRecord::Base
   validates :category_id, presence: true
   belongs_to :user
   belongs_to :category
+  has_many :comments, dependent: :destroy
   acts_as_votable
 
   def get_category

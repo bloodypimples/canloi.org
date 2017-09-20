@@ -9,9 +9,22 @@
       <span><%= link_to 'Xóa', @post, method: :delete, data: { confirm: 'Chắc chưa?' } %></span>
       <span><%= link_to @post.get_upvotes.size.to_s + "👍", like_post_path(@post), method: :put %></span>
       <span><%= link_to @post.get_downvotes.size.to_s + "🖕", dislike_post_path(@post), method: :put %></span>
+      <span><%= link_to @post.comments.count.to_s + "🗨", post_path(@post) + "#comment-title" %></span>
     <% end %>
   </p>
   <div class="picture">
     <%= image_tag(@post.picture.url) %>
   </div>
+  <h1 id="comment-title">
+    <%= @post.comments.count %> Bình luận
+  </h1>
+  <div class="comments">
+    <%= render :partial => @post.comments %>
+  </div>
+  <%= simple_form_for [@post, Comment.new] do |f| %>
+    <div class="field">
+      <%= f.text_area :body, placeholder: "Nhập bình luận của bạn..." %>
+    </div>
+    <%= f.submit "Bình luận" %>
+  <% end %>
 </div>
