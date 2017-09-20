@@ -1,7 +1,9 @@
 <% @posts.each do |post| %>
   <%= render 'post', post: post %>
 <% end %>
-<div class="pages-wrapper">
-  <span>Trang:</span>
-  <%= will_paginate @posts %>
-</div>
+<% if @posts.count >= 10 %>
+  <div class="pages-wrapper">
+    <span>Trang:</span>
+    <%= will_paginate @posts %>
+  </div>
+<% end %>
