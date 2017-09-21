@@ -6,7 +6,7 @@
     <h1><%= link_to post.title, post %></h1>
     <p>
       Đăng bởi:
-      <%= link_to post.user.email, post.user %>
+      <%= link_to post.user.get_name, post.user %>
       vào
       <%= link_to post.get_category, posts_path(category: post.category_id) %>
     </p>
