@@ -17,7 +17,7 @@ task :scrape_posts => :environment do
 
     title = post['alt']
     img_url = URI.parse(post['src'])
-    category_id = rand(2..5)
+    category_id = rand(1..4)
     user = User.find_by(name: "canloi_bot")
 
     post = Post.new(title: title, user_id: user.id, category_id: category_id, picture: img_url)
