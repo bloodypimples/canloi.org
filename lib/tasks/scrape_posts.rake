@@ -22,6 +22,8 @@ task :scrape_posts => :environment do
 
     post = Post.new(title: title, user_id: user.id, category_id: category_id, picture: img_url)
 
-    post.save!
+    if(Post.find_by(title: post.title) == nil || Post.find_by(picture_file_name: post.picture_file_name) == nil)
+      post.save!
+    end
   end
 end
