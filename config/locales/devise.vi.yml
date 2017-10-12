@@ -22,6 +22,8 @@ vi:
       invalid_token: 'Sai mã xác nhận.'
       timeout: 'Phiên làm việc của bạn đã kết thúc, bạn cần đăng nhập lại để có thể tiếp tục.'
       inactive: 'Tài khoản của bạn chưa được kích hoạt.'
+      user:
+        not_found_in_database: 'Sai email hoặc mật khẩu.'
     sessions:
       signed_in: 'Đăng nhập thành công.'
       signed_out: 'Thoát tài khoản thành công.'
