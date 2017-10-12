@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to post_path(@post) + "#comment-title", notice: 'Bình luận thành công.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        format.html { redirect_to post_path(@post), notice: 'Đã có lỗi xảy ra, không thể đăng bình luận.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Xóa bình luận thành công.' }
+      format.html { redirect_to post_path(@post) + "#comment-title", notice: 'Xóa bình luận thành công.' }
       format.json { head :no_content }
     end
   end
