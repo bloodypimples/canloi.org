@@ -15,7 +15,7 @@ vi:
   devise:
     failure:
       already_authenticated: 'Bạn đã đăng nhập rồi.'
-      unauthenticated: 'Bạn cần đăng nhập hoặc đăng ký để có thẻ tiếp tục.'
+      unauthenticated: 'Bạn cần đăng nhập hoặc đăng ký để có thể tiếp tục.'
       unconfirmed: 'Bạn cần chứng thực tài khoản này mới có thể sử dụng được.'
       locked: 'Tài khoản của bạn đã bị khóa.'
       invalid: 'Sai email hoặc mật khẩu.'
