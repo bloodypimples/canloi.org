@@ -1,0 +1,17 @@
+<div class="post">
+  <div class="picture">
+    <%= link_to image_tag(post.picture.url), post %>
+  </div>
+  <div class="text">
+    <h1><%= link_to post.title, post %></h1>
+    <p>
+      Đăng <%= time_ago_in_words(post.created_at) %> trước
+    </p>
+    <div class="admin-links">
+      <% if user_signed_in? && current_user == post.user %>
+        <span><%= link_to 'Sửa', edit_post_path(post) %></span>
+        <span><%= link_to 'Xóa', post, method: :delete, data: { confirm: 'Chắc chưa?' } %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

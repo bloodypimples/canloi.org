@@ -5,8 +5,6 @@
     <%= time_ago_in_words(@post.created_at) %> trước
     <% if user_signed_in? && current_user == @post.user %>
       |
-      <span><%= link_to 'Sửa', edit_post_path(@post) %></span>
-      <span><%= link_to 'Xóa', @post, method: :delete, data: { confirm: 'Chắc chưa?' } %></span>
       <span><%= link_to @post.get_upvotes.size.to_s + "👍", like_post_path(@post), method: :put %></span>
       <span><%= link_to @post.get_downvotes.size.to_s + "🖕", dislike_post_path(@post), method: :put %></span>
       <span><%= link_to @post.comments.count.to_s + "🗨", post_path(@post) + "#comment-title" %></span>

@@ -9,7 +9,7 @@
   </div>
   <div class="links">
   <% if user_signed_in? %>
-    <%= link_to 'Đăng bài', new_post_path %>
+    <%= link_to 'Quản lý', admin_path %>
     <%= link_to current_user.get_name, current_user %>
     <%= link_to "Thoát", destroy_user_session_path, method: :delete %>
   <% else %>

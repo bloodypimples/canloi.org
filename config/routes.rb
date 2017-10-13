@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin', to: "static_pages#cms"
+
   resources :comments
 
   devise_for :users
